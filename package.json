@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/Diegocortes15/cypress-training#readme",
   "devDependencies": {
-    "cypress": "^10.3.1"
+    "cypress": "^10.3.1",
+    "typescript": "^4.7.4"
   }
 }
