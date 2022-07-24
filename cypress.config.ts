@@ -1,4 +1,4 @@
-import { defineConfig } from 'cypress';
+import {defineConfig} from "cypress";
 
 export default defineConfig({
   // setupNodeEvents can be defined in either
@@ -10,6 +10,6 @@ export default defineConfig({
 
       // IMPORTANT return the updated config object
       return config;
-    }
-  }
+    },
+  },
 });
