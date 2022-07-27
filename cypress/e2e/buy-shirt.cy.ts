@@ -1,29 +1,34 @@
+import menuContentPage from "../page/menu-content.page";
+import productListPage from "../page/products-list.page";
+import shoppingCartPage from "../page/shoping-cart.page";
+import loginPage from "../page/login.page";
+import addressStepPage from "../page/address-step.page";
+import shippingStepPage from "../page/shipping-step.page";
+import paymentStepPage from "../page/payment-step.page";
+
 describe("Buy a t-shirt", () => {
-  it("then the t-shirt should be bought", () => {
-    cy.visit("http://automationpractice.com/");
-    cy.get("#block_top_menu > ul > li:nth-child(3) > a").click();
-    cy.get(
-        "#center_column a.button.ajax_add_to_cart_button.btn.btn-default",
-    ).click();
-    cy.get("[style*='display: block;'] .button-container > a").click();
-    cy.get(".cart_navigation span").click();
+  it("then should be bought a t-shirt", () => {
+    menuContentPage.visitMenuContentPage();
+    menuContentPage.goToTShirtMenu();
 
-    cy.get("#email").type("aperdomobo@gmail.com");
-    cy.get("#passwd").type("WorkshopProtractor");
+    productListPage.clickAddToCartBtn();
+    productListPage.clickProceedToCheckout();
 
-    cy.get("[name='SubmitLogin']").click();
+    shoppingCartPage.clickProceedToCheckout();
 
-    cy.get(".cart_navigation button").click();
+    loginPage.typeEmailInput();
+    loginPage.typePasswordInput();
+    loginPage.clickSignInBtn();
 
-    cy.get("[type='checkbox']").click();
+    addressStepPage.clickProceedToCheckout();
 
-    cy.get(".cart_navigation button").click();
+    shippingStepPage.clickCheckBox();
+    shippingStepPage.clickProceedToCheckout();
 
-    cy.get("[title='Pay by bank wire']").click();
+    paymentStepPage.clickPayByBankWireBtn();
+    paymentStepPage.clickProceedToCheckout();
 
-    cy.get(".cart_navigation button").click();
-
-    cy.get("#center_column > div > p > strong").should(
+    cy.get(paymentStepPage.confirmationMessage).should(
         "have.text",
         "Your order on My Store is complete.",
     );

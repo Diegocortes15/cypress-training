@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 class ProductListPage {
   private addToCartBtn: string;
   private proceedToCheckoutBtn: string;
