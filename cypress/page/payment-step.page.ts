@@ -1,4 +1,3 @@
-/* eslint-disable require-jsdoc */
 class PaymentStepPage {
   private payByBankWireBtn: string;
   private proceedToCheckoutBtn: string;

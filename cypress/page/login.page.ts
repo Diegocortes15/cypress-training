@@ -1,4 +1,3 @@
-/* eslint-disable require-jsdoc */
 class LoginPage {
   private emailInput: string;
   private passwordInput: string;

@@ -1,4 +1,3 @@
-/* eslint-disable require-jsdoc */
 class AddressStepPage {
   private proceedToCheckoutBtn: string;
 

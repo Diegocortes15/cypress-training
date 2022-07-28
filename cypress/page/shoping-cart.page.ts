@@ -1,4 +1,3 @@
-/* eslint-disable require-jsdoc */
 class ShoppingCartPage {
   private proceedToCheckoutBtn: string;
 
