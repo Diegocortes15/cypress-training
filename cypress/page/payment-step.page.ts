@@ -22,4 +22,4 @@ class PaymentStepPage {
   }
 }
 
-export default new PaymentStepPage();
+export {PaymentStepPage};

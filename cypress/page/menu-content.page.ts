@@ -16,4 +16,4 @@ class MenuContentPage {
   }
 }
 
-export default new MenuContentPage();
+export {MenuContentPage};

@@ -1,4 +1,4 @@
-class ProductListPage {
+class ProductsListPage {
   private addToCartBtn: string;
   private proceedToCheckoutBtn: string;
 
@@ -18,4 +18,4 @@ class ProductListPage {
   }
 }
 
-export default new ProductListPage();
+export {ProductsListPage};

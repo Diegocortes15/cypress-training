@@ -16,4 +16,4 @@ class ShippingStepPage {
   }
 }
 
-export default new ShippingStepPage();
+export {ShippingStepPage};

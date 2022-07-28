@@ -10,4 +10,4 @@ class ShoppingCartPage {
   }
 }
 
-export default new ShoppingCartPage();
+export {ShoppingCartPage};

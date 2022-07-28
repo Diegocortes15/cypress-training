@@ -1,25 +1,32 @@
-import menuContentPage from "../page/menu-content.page";
-import productListPage from "../page/products-list.page";
-import shoppingCartPage from "../page/shoping-cart.page";
-import loginPage from "../page/login.page";
-import addressStepPage from "../page/address-step.page";
-import shippingStepPage from "../page/shipping-step.page";
-import paymentStepPage from "../page/payment-step.page";
+import {
+  MenuContentPage,
+  ProductsListPage,
+  ShoppingCartPage,
+  LoginPage,
+  AddressStepPage,
+  ShippingStepPage,
+  PaymentStepPage,
+} from "../page/index";
+
+const menuContentPage = new MenuContentPage();
+const productsListPage = new ProductsListPage();
+const shoppingCartPage = new ShoppingCartPage();
+const loginPage = new LoginPage();
+const addressStepPage = new AddressStepPage();
+const shippingStepPage = new ShippingStepPage();
+const paymentStepPage = new PaymentStepPage();
 
 describe("Buy a t-shirt", () => {
   it("then should be bought a t-shirt", () => {
     menuContentPage.visitMenuContentPage();
     menuContentPage.goToTShirtMenu();
 
-    productListPage.clickAddToCartBtn();
-    productListPage.clickProceedToCheckout();
+    productsListPage.clickAddToCartBtn();
+    productsListPage.clickProceedToCheckout();
 
     shoppingCartPage.clickProceedToCheckout();
 
-    loginPage.typeEmailInput();
-    loginPage.typePasswordInput();
-    loginPage.clickSignInBtn();
-
+    loginPage.login("aperdomobo@gmail.com", "WorkshopProtractor");
     addressStepPage.clickProceedToCheckout();
 
     shippingStepPage.clickCheckBox();

@@ -10,4 +10,4 @@ class AddressStepPage {
   }
 }
 
-export default new AddressStepPage();
+export {AddressStepPage};

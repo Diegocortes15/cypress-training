@@ -9,17 +9,11 @@ class LoginPage {
     this.SignInBtn = "[name='SubmitLogin']";
   }
 
-  public typeEmailInput(): void {
-    cy.get(this.emailInput).type("aperdomobo@gmail.com");
-  }
-
-  public typePasswordInput(): void {
-    cy.get(this.passwordInput).type("WorkshopProtractor");
-  }
-
-  public clickSignInBtn(): void {
+  public login(email: string, password: string): void {
+    cy.get(this.emailInput).type(email);
+    cy.get(this.passwordInput).type(password);
     cy.get(this.SignInBtn).click();
   }
 }
 
-export default new LoginPage();
+export {LoginPage};
