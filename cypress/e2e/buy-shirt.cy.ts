@@ -34,7 +34,7 @@ describe("Buy a t-shirt", () => {
     shippingStepPage.clickProceedToCheckout();
 
     paymentStepPage.clickPayByBankWireBtn();
-    paymentStepPage.clickProceedToCheckout();
+    paymentStepPage.clickConfirmOrderBtn();
     paymentStepPage
         .getConfirmationMessage()
         .should("have.text", "Your order on My Store is complete.");

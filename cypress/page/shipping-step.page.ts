@@ -1,10 +1,10 @@
 class ShippingStepPage {
-  private proceedToCheckoutBtn: string;
   private acceptTerms: string;
+  private proceedToCheckoutBtn: string;
 
   constructor() {
-    this.acceptTerms = "[type='checkbox']";
-    this.proceedToCheckoutBtn = ".cart_navigation button";
+    this.acceptTerms = ".checker input";
+    this.proceedToCheckoutBtn = ".cart_navigation .button";
   }
 
   public clickAcceptTerms(): void {

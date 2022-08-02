@@ -1,20 +1,20 @@
 class PaymentStepPage {
   private payByBankWireBtn: string;
-  private proceedToCheckoutBtn: string;
+  private confirmOrderBtn: string;
   private confirmationMessage: string;
 
   constructor() {
-    this.payByBankWireBtn = "[title='Pay by bank wire']";
-    this.proceedToCheckoutBtn = ".cart_navigation button";
-    this.confirmationMessage = "#center_column > div > p > strong";
+    this.payByBankWireBtn = ".bankwire";
+    this.confirmOrderBtn = ".cart_navigation .button";
+    this.confirmationMessage = ".cheque-indent .dark";
   }
 
   public clickPayByBankWireBtn(): void {
     cy.get(this.payByBankWireBtn).click();
   }
 
-  public clickProceedToCheckout(): void {
-    cy.get(this.proceedToCheckoutBtn).click();
+  public clickConfirmOrderBtn(): void {
+    cy.get(this.confirmOrderBtn).click();
   }
 
   public getConfirmationMessage(): any {
