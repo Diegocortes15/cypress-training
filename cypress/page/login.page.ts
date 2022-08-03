@@ -6,7 +6,7 @@ class LoginPage {
   constructor() {
     this.emailInput = "#email";
     this.passwordInput = "#passwd";
-    this.SignInBtn = "[name='SubmitLogin']";
+    this.SignInBtn = "#SubmitLogin";
   }
 
   public login(email: string, password: string): void {
