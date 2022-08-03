@@ -3,8 +3,8 @@ class ShippingStepPage {
   private proceedToCheckoutBtn: string;
 
   constructor() {
-    this.acceptTerms = ".checker input";
-    this.proceedToCheckoutBtn = ".cart_navigation .button";
+    this.acceptTerms = "#cgv";
+    this.proceedToCheckoutBtn = ".cart_navigation button[type='submit']";
   }
 
   public clickAcceptTerms(): void {

@@ -3,9 +3,8 @@ class ProductsListPage {
   private proceedToCheckoutBtn: string;
 
   constructor() {
-    this.addToCartBtn =
-      ".product-container .button-container > a.ajax_add_to_cart_button";
-    this.proceedToCheckoutBtn = ".layer_cart_cart a";
+    this.addToCartBtn = "[title='Add to cart']";
+    this.proceedToCheckoutBtn = "a[title='Proceed to checkout']";
   }
 
   public clickAddToCartBtn(): void {
