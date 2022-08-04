@@ -9,15 +9,25 @@ import {
 } from "../page/index";
 
 describe("Buy a t-shirt", () => {
-  it("then should be bought a t-shirt", () => {
-    let menuContentPage: MenuContentPage;
-    let productsListPage: ProductsListPage;
-    let shoppingCartPage: ShoppingCartPage;
-    let loginPage: LoginPage;
-    let addressStepPage: AddressStepPage;
-    let shippingStepPage: ShippingStepPage;
-    let paymentStepPage: PaymentStepPage;
+  let menuContentPage: MenuContentPage;
+  let productsListPage: ProductsListPage;
+  let shoppingCartPage: ShoppingCartPage;
+  let loginPage: LoginPage;
+  let addressStepPage: AddressStepPage;
+  let shippingStepPage: ShippingStepPage;
+  let paymentStepPage: PaymentStepPage;
 
+  before(() => {
+    menuContentPage = new MenuContentPage();
+    productsListPage = new ProductsListPage();
+    shoppingCartPage = new ShoppingCartPage();
+    loginPage = new LoginPage();
+    addressStepPage = new AddressStepPage();
+    shippingStepPage = new ShippingStepPage();
+    paymentStepPage = new PaymentStepPage();
+  });
+
+  it("then should be bought a t-shirt", () => {
     const loginData = {
       email: "aperdomobo@gmail.com",
       password: "WorkshopProtractor",
@@ -41,7 +51,7 @@ describe("Buy a t-shirt", () => {
     paymentStepPage.clickPayByBankWireBtn();
     paymentStepPage.clickConfirmOrderBtn();
     paymentStepPage
-      .getConfirmationMessage()
-      .should("have.text", "Your order on My Store is complete.");
+        .getConfirmationMessage()
+        .should("have.text", "Your order on My Store is complete.");
   });
 });
