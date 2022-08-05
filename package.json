@@ -11,8 +11,8 @@
     "clean-report": "rm -r cypress/reports/*",
     "combine:reports": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/report.json",
     "generate:reports": "marge cypress/reports/report.json -f report -o cypress/reports",
-    "pre-test": "npm run clean-report",
-    "post-test": "npm run combine:reports && npm run generate:reports"
+    "pretest": "npm run clean-report",
+    "posttest": "npm run combine:reports && npm run generate:reports"
   },
   "repository": {
     "type": "git",
