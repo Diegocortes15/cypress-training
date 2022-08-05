@@ -8,16 +8,31 @@ import {
   PaymentStepPage,
 } from "../page/index";
 
-const menuContentPage = new MenuContentPage();
-const productsListPage = new ProductsListPage();
-const shoppingCartPage = new ShoppingCartPage();
-const loginPage = new LoginPage();
-const addressStepPage = new AddressStepPage();
-const shippingStepPage = new ShippingStepPage();
-const paymentStepPage = new PaymentStepPage();
-
 describe("Buy a t-shirt", () => {
+  let menuContentPage: MenuContentPage;
+  let productsListPage: ProductsListPage;
+  let shoppingCartPage: ShoppingCartPage;
+  let loginPage: LoginPage;
+  let addressStepPage: AddressStepPage;
+  let shippingStepPage: ShippingStepPage;
+  let paymentStepPage: PaymentStepPage;
+
+  before(() => {
+    menuContentPage = new MenuContentPage();
+    productsListPage = new ProductsListPage();
+    shoppingCartPage = new ShoppingCartPage();
+    loginPage = new LoginPage();
+    addressStepPage = new AddressStepPage();
+    shippingStepPage = new ShippingStepPage();
+    paymentStepPage = new PaymentStepPage();
+  });
+
   it("then should be bought a t-shirt", () => {
+    const loginData = {
+      email: "aperdomobo@gmail.com",
+      password: "WorkshopProtractor",
+    };
+
     menuContentPage.visitMenuContentPage();
     menuContentPage.goToTShirtMenu();
 
@@ -26,7 +41,7 @@ describe("Buy a t-shirt", () => {
 
     shoppingCartPage.clickProceedToCheckout();
 
-    loginPage.login("aperdomobo@gmail.com", "WorkshopProtractor");
+    loginPage.login(loginData.email, loginData.password);
 
     addressStepPage.clickProceedToCheckout();
 
