@@ -8,10 +8,10 @@
     "test:open": "npm run lint && cypress open",
     "lint": "eslint ./cypress/e2e/**/*.ts",
     "lint:fix": "npm run lint -- --fix",
-    "clean-report": "rm -r cypress/reports/*",
+    "report:clean": "rm -r cypress/reports/*",
     "combine:reports": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/report.json",
     "generate:reports": "marge cypress/reports/report.json -f report -o cypress/reports",
-    "pretest": "npm run clean-report",
+    "pretest": "npm run report:clean",
     "posttest": "npm run combine:reports && npm run generate:reports"
   },
   "repository": {
